@@ -1,0 +1,123 @@
+<html>
+
+<head>
+	<meta charset="UTF-8"/>
+  
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link th:href="@{/css/reset.css}" rel="stylesheet" />
+    <link th:href="@{/css/styles.css}" rel="stylesheet" />
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+   
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+<title>Atualizar Dados</title>
+
+</head>
+<body>  
+<div class="logo-container p-3 d-flex justify-content-between">
+		<span class="logo ml-2">Barbearia Santos</span>
+		<span class="mt-3 mr-2">
+			<a class="text-light"  >login</a>
+			<a class="text-light"  href="#">logout</a>
+			<form id="form-login"  method="post"></form>
+		</span>
+	</div>
+	<div >
+		<div class="col">
+			<nav class="navbar navbar-expand-md  navbar-light bg-light fixed-top
+       py-3 box-shadow mb-30">
+       <a href="index.html"  class="navbar-brand">
+           <li class="nav-item"><a class="nav-link js-scroll-trigger">Barbearia Santos</li>
+       </a> 
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="" /></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ml-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" >Home</a></li>
+
+                        <li class="nav-item"><a href="/cliente" class="nav-link js-scroll-trigger">Voltar</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+		</div>
+	</div>
+	
+	 <div class="container mt-10">
+			<div class="jumbotron mb-2 mt-2">
+			<h1 class="display-4" >Atualizar Dados</h1>
+			</div>
+			
+		<div class="card mt-3">
+				<form action="#"  th:action="@{/cliente/update/{id}(id=${clientes.id})}"  th:object="${clientes}"  class="card-body" method="post">
+				 	<div class="form-group">
+				 		<label for="profissional">Profissional</label>
+				 		<input name="profissional" class="form-control" th:field="*{profissional}"  placeholder="Nome do profissional" id="profissional"/>
+				 		<small>Informe o nome do profissional</small>
+				 	</div>
+				 	
+				 	<div class="form-group">
+				 		<label for="nome">Nome</label>
+				 		<input name="nome" class="form-control" th:field="*{nome}" placeholder="Nome do Cliente" id="nome"/>
+				 		<small>Informe o nome do Cliente</small>
+				 	</div>
+				 	
+				 	<div class="form-group">
+				 		<label for="endereco">Endereço</label>
+				 		<input name="endereco"  id="endereco" th:field="*{endereco}" class="form-control" placeholder="Rua"/>
+				 		<small>Informe o endereço</small>
+				 	</div>
+				 	
+
+				 	<div class="form-group">
+				 		<label for="bairro">Bairro</label>
+				 		<input name="bairro" id="bairro" th:field="*{bairro}"  class="form-control" placeholder="Bairro"/>
+				 		<small>Informe o bairro</small>
+				 	</div>
+				 	
+	
+				 	<div class="form-group">
+				 		<label for="cidade">Cidade</label>
+				 		<input  name="cidade" id="cidade" th:field="*{cidade}" class="form-control" placeholder="Cidade"/>
+				 		<small>Informe a cidade</small>
+				 	</div>
+				 	
+
+				 	<div class="form-group">
+				 		<label for="cep">CEP</label>
+				 		<input name="cep" id="cep" class="form-control" th:field="*{cep}" placeholder="cep" onblur="consultarCep()"/>
+				 		<small>Informe o CEP</small>
+				 	</div>
+				 	
+
+				 	<div class="form-group">
+				 		<label for="DataAgendamento">Data do Agendamento:</label>
+				 		<input  name="DataAgendamento" th:field="*{DataAgendamento}" class="form-control" />
+				 		<small>Informe a Data do Agendamento</small>
+				 	</div>
+				 	
+
+				 	<div class="form-group">
+				 		<label for="HoraAgendamento">Hora:</label>
+				 		<input type="time" name="HoraAgendamento" th:field="*{HoraAgendamento}"  class="form-control" />
+				 		<small>Informe a hora </small>
+				 	</div>
+				 	
+				 	<button class="btn btn-primary" type="submit">Cadastrar</button>
+				</form>
+			</div>
+		</div>
+		
+		<script type="text/javascript" th:src="@{/js/javascript.js}" /></script>
+		<script type="text/javascript" th:src="@{/js/validacao.js}" /></script>
+		<script type="text/javascript" th:src="@{/js/jquery.min.js}" /></script>
+
+</body>
+</html>

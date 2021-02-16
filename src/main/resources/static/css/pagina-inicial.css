@@ -1,0 +1,52 @@
+body {
+    background: #CCC;
+}
+
+#banner {
+    width: 100%;
+}
+
+.principal {
+    padding: 30px;
+}
+
+.titulo-principal {
+    padding-left: 20px;
+}
+
+.titulo-centralizado {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+#missao {
+    font-size: 20px;
+}
+
+/* Todos os STRONG dentro de EM */
+em strong {
+    color: red;
+}
+
+.beneficios {
+    background: #FFF;
+    padding: 20px;
+}
+
+ul {
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+    margin-right: 15%;
+}
+
+.beneficio {
+    font-style: italic;
+}
+
+.imagem-beneficios {
+    width: 50%;
+}
